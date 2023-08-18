@@ -13,6 +13,13 @@
   }
 }
 
+.annuity-calculator {
+  margin-top: 200px; /* Adjust this value as needed */
+}
+
+
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
