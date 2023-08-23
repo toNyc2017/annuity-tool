@@ -1,45 +1,209 @@
-.App {
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body::before {
+  content: "Yorkville Data Technologies";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg); /* Adjusted the rotation angle */
+  font-size: 5em;
+  opacity: 0.1; /* Adjust for desired visibility */
+  z-index: -1; /* Place it behind the content */
+  color: #333; /* Adjust color as needed */
+  white-space: nowrap;
+}
+
+
+
+body {
+  background-color: #f4f4f4; /* This is a light gray color */
+}
+
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px 20px; /* Adjust these values as needed */
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+nav li {
+  margin-left: 20px; /* Adds some space between the list items */
+}
+
+
+.concept-title {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.image-container {
+  margin-bottom: 100px;
+  text-align: center;  /* To center the image if it's smaller than its container*/
+}
+
+.image-container img {
+  max-width: 100%;  /* To ensure the image doesn't overflow its container*/
+  height: auto;     /* To maintain the image's aspect ratio */
+}
+
+
+.proposal-content {
+  display: grid;
+  grid-template-columns: 6fr 4fr; /* This will allocate 30% width to the text and 60% to the charts */
+  gap: 20px; /* This will add a gap between the two columns */
+}
+
+
+.proposal-charts {
+  margin-top: 50px; /* Adjust this value based on how much space you want */
+}
+
+
+
+
+.proposal-text {
+  margin-right: 20px; /* Adds some spacing between the text and the image */
+}
+
+
+.proposal-charts img {
+  width: 80%; 
+  height: 700px; /* Adjust this value based on your preference */
+  text-align: right;
+}
+
+
+.proposal-charts img {
+  width: 90%; /* Makes the image responsive and fit its container */
+  height: auto;
+}
+.proposal-charts h3 {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.annuity-calculator {
-  margin-top: 200px; /* Adjust this value as needed */
+  margin-bottom: 10px; /* Adjust as needed */
 }
 
 
+.proposal-content h1,
+.proposal-content h2,
+.proposal-content h3,
+.proposal-content p,
+.proposal-content ul,
+.proposal-content ol {
+    margin-left: 10px;
+}
+.proposal-text h2 {
+  margin-top: 30px; /* Adjust this value based on how much space you want */
+  margin-bottom: 10px; /* Adjust this value based on how much space you want */
+}
 
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.app-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  grid-template-rows: 1fr 1fr; /* Two rows */
+  gap: 20px; /* Space between quadrants */
+  padding: 20px; /* Optional padding around the entire container */
+}
+
+.title, .subtitle {
+  grid-column: 1 / span 2; /* Span across both columns */
+  text-align: center;
+  padding: 10px;
+}
+
+.title {
+  grid-row: 1; /* Explicitly set to the first row */
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+
+.subtitle {
+  grid-row: 2; /* Explicitly set to the second row */
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+  padding: 10px;
+}
+
+.quadrant {
+  padding: 20px;
+  border: 1px solid #e0e0e0; /* Optional: Add a border to see the quadrants */
+}
+.top-left {
+  grid-column: 1; /* First column */
+  grid-row: 3; /* Third row */
+}
+
+.top-right {
+  grid-column: 2; /* Second column */
+  grid-row: 3; /* Third row */
+}
+
+.bottom-left {
+  grid-column: 1; /* First column */
+  grid-row: 4; /* Fourth row */
+}
+
+.bottom-right {
+  grid-column: 2; /* Second column */
+  grid-row: 4; /* Fourth row */
+}
+
+.annuity-calculator div {
+  margin-bottom: 20px; /* Adjust this value based on how much space you want */
+}
+
+
+.calculate-button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px; /* This makes the button oval-shaped */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.calculate-button:hover {
+  background-color: darkblue; /* Slightly darker blue on hover for a subtle effect */
+}
+
+.calculator-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px; /* Adjust this value to increase or decrease spacing between rows */
 }
 
-.App-link {
-  color: #61dafb;
+.calculator-row {
+  display: flex;
+  justify-content: space-between;
+  width: 80%; /* Adjust this value based on your preference */
+  gap: 10px; /* Adjust this value to increase or decrease spacing between label and input */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.calculator-container div {
+  margin-bottom: 20px; /* Adjust this value based on your preference */
+}
+.calculator-container label {
+  margin-right: 10px; /* Adjust this value based on your preference */
+}
+.calculator-container button {
+  margin-top: 20px; /* Adjust this value based on your preference */
+}
+.calculator-container {
+  padding: 20px; /* Adjust this value based on your preference */
 }
