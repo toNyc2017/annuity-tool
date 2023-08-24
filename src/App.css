@@ -59,7 +59,7 @@ nav li {
 
 .proposal-content {
   display: grid;
-  grid-template-columns: 6fr 4fr; /* This will allocate 30% width to the text and 60% to the charts */
+  grid-template-columns: 6fr 4fr; /* This will allocate 60% width to the text and 40% to the charts */
   gap: 20px; /* This will add a gap between the two columns */
 }
 
@@ -107,14 +107,6 @@ nav li {
 }
 
 
-
-.app-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Two columns */
-  grid-template-rows: 1fr 1fr; /* Two rows */
-  gap: 20px; /* Space between quadrants */
-  padding: 20px; /* Optional padding around the entire container */
-}
 
 .title, .subtitle {
   grid-column: 1 / span 2; /* Span across both columns */
@@ -206,4 +198,31 @@ nav li {
 }
 .calculator-container {
   padding: 20px; /* Adjust this value based on your preference */
+}
+
+
+/* ... (rest of your styles) ... */
+
+.app-container {
+  display: grid;
+  grid-template-columns: 1fr; /* One column */
+  grid-template-rows: auto 1fr auto; /* Header, main content, and navigation link */
+  gap: 20px; /* Space between items */
+  padding: 20px; /* Optional padding around the entire container */
+}
+
+.header {
+  grid-row: 1; /* Explicitly set to the first row */
+}
+
+.main-content {
+  grid-row: 2; /* Explicitly set to the second row */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  grid-template-rows: auto auto 1fr 1fr; /* Title, subtitle, and two rows for quadrants */
+  gap: 20px; /* Space between items */
+}
+
+.navigate {
+  grid-row: 3; /* Explicitly set to the third row */
 }

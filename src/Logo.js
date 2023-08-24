@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Logo = ({ width = '50px', height = '25px' }) => {
     return (
-        <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xlinkHref="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 626.5 102.1" style={{ width: '200px', height: '75px' }} xmlSpace="preserve" focusable="false">
+        <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xlinkHref="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 626.5 102.1" style={{ width: '300px', height: '125px' }} xmlSpace="preserve" focusable="false">
 
 <g>
 	<path style={{ fill: '#1C4480' }} d="M177,17.9h11.9l12,34.8h-9.4l-1.8-6.2h-13.5l-1.8,6.2H165L177,17.9z M187.7,39.7l-3.6-11.5

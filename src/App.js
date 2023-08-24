@@ -180,29 +180,33 @@ function App() {
 }
 function MainPage() {
   return (
+    
     <div className="app-container">
-      <Logo />
-      <div className="titlex">THE VALUE OF ANNUITIES IN FINANCIAL PLANNING</div>
-      <div className="subtitle">Learning the basics</div>
+      <div className="header">
+        <Logo />
+      </div>
+      <div className="main-content">
+        <div className="title">THE VALUE OF ANNUITIES IN FINANCIAL PLANNING</div>
+        <div className="subtitle">Learning the basics</div>
 
-      <div className="quadrant top-left">
-        <h3>What is an annuity?</h3>
-        <p>An annuity is a financial product that provides a series of payments made at equal intervals. There are many types of annuities, but all share this basic characteristic. Typically, annuities are used as a way to secure a steady cash flow for an individual during their retirement years. They can be purchased with a lump sum or with a series of payments over time and can provide fixed or variable returns based on the terms of the contract.</p>
+        <div className="quadrant top-left">
+          <h3>What is an annuity?</h3>
+          <p>An annuity is a financial product that provides a series of payments made at equal intervals. There are many types of annuities, but all share this basic characteristic. Typically, annuities are used as a way to secure a steady cash flow for an individual during their retirement years. They can be purchased with a lump sum or with a series of payments over time and can provide fixed or variable returns based on the terms of the contract.</p>
+        </div>
+        <div className="quadrant top-right">
+          <AnnuityCalculator />
+        </div>
+        <div className="quadrant bottom-left">
+          <h3>Who might want to purchase an annuity?</h3>
+          <p>Annuities are often sought by individuals who want to ensure a stable income stream in their retirement years, especially if they're concerned about outliving their savings. They can be beneficial for those who don't have employer-sponsored retirement plans or want an additional safety net beyond other retirement savings. Additionally, individuals who have received a large sum of money, such as from an inheritance or lottery win, might purchase an annuity to help manage and distribute their wealth over time.</p>
+        </div>
+        <div className="quadrant bottom-right">
+          <video width="320" height="240" controls>
+            <source src="https://res.cloudinary.com/dvse2x2pd/video/upload/v1692377518/SalmaCelloShort_zskw3k.mov" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
-      <div className="quadrant top-right">
-        <AnnuityCalculator />
-      </div>
-      <div className="quadrant bottom-left">
-        <h3>Who might want to purchase an annuity?</h3>
-        <p>Annuities are often sought by individuals who want to ensure a stable income stream in their retirement years, especially if they're concerned about outliving their savings. They can be beneficial for those who don't have employer-sponsored retirement plans or want an additional safety net beyond other retirement savings. Additionally, individuals who have received a large sum of money, such as from an inheritance or lottery win, might purchase an annuity to help manage and distribute their wealth over time.</p>
-      </div>
-      <div className="quadrant bottom-right">
-        <video width="320" height="240" controls>
-          <source src="https://res.cloudinary.com/dvse2x2pd/video/upload/v1692377518/SalmaCelloShort_zskw3k.mov" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
       <div className="navigate">
         <Link to="/proposal">View Proposal</Link>
       </div>
