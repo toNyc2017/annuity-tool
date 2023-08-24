@@ -82,6 +82,55 @@
 
 //export default AnnuityCalculator;
 
+//import React, { useState } from 'react';
+
+//const AnnuityCalculator = () => {
+//    const [premium, setPremium] = useState('');
+//    const [annuityValue, setAnnuityValue] = useState('');
+//    const [termLength, setTermLength] = useState('');
+//    const [result, setResult] = useState(null);
+
+//    const calculateInterestRate = () => {
+//        const rate = Math.pow((annuityValue / premium), (1 / termLength)) - 1;
+//        setResult((rate * 100).toFixed(2));
+//    };
+
+//    return (
+//        <div className="calculator-container">
+//            <h2>Annuity Calculator</h2>
+            
+//            <div className="calculator-row">
+//                <label>Enter the Premium: </label>
+//                <input type="number" value={premium} onChange={(e) => setPremium(e.target.value)} />
+//            </div>
+            
+//            <div className="calculator-row">
+//                <label>Enter the Annuity Value: </label>
+//                <input type="number" value={annuityValue} onChange={(e) => setAnnuityValue(e.target.value)} />
+//            </div>
+            
+//            <div className="calculator-row">
+//                <label>Select the Term Length of the annuity (in years): </label>
+//                <input type="number" value={termLength} onChange={(e) => setTermLength(parseInt(e.target.value))} />
+//            </div>
+            
+//            <div className="calculator-row">
+//                <button className="calculate-button" onClick={calculateInterestRate}>CALCULATE</button>
+//            </div>
+
+//            {result && (
+//                <div className="calculator-row result">
+//                    It takes an Annual Interest Rate of {result} % for {Number(premium).toLocaleString('en-US', { style: 'currency', currency: 'USD' })} 
+//                     to grow to  {Number(annuityValue).toLocaleString('en-US', { style: 'currency', currency: 'USD' })} over {termLength} years.
+//                </div>
+//            )}
+//        </div>
+//    );
+//};
+
+//export default AnnuityCalculator;
+
+
 import React, { useState } from 'react';
 
 const AnnuityCalculator = () => {
@@ -89,10 +138,12 @@ const AnnuityCalculator = () => {
     const [annuityValue, setAnnuityValue] = useState('');
     const [termLength, setTermLength] = useState('');
     const [result, setResult] = useState(null);
+    const [shouldCalculate, setShouldCalculate] = useState(false);
 
     const calculateInterestRate = () => {
         const rate = Math.pow((annuityValue / premium), (1 / termLength)) - 1;
-        setResult((rate * 100).toFixed(2));
+        setResult(Math.round(rate * 100)); // Remove trailing decimals
+        setShouldCalculate(true);
     };
 
     return (
@@ -101,29 +152,29 @@ const AnnuityCalculator = () => {
             
             <div className="calculator-row">
                 <label>Enter the Premium: </label>
-                <input type="number" value={premium} onChange={(e) => setPremium(e.target.value)} />
+                <input type="number" value={premium} onChange={(e) => { setPremium(e.target.value); setShouldCalculate(false); }} />
             </div>
             
             <div className="calculator-row">
                 <label>Enter the Annuity Value: </label>
-                <input type="number" value={annuityValue} onChange={(e) => setAnnuityValue(e.target.value)} />
+                <input type="number" value={annuityValue} onChange={(e) => { setAnnuityValue(e.target.value); setShouldCalculate(false); }} />
             </div>
             
             <div className="calculator-row">
                 <label>Select the Term Length of the annuity (in years): </label>
-                <input type="number" value={termLength} onChange={(e) => setTermLength(parseInt(e.target.value))} />
+                <input type="number" value={termLength} onChange={(e) => { setTermLength(parseInt(e.target.value)); setShouldCalculate(false); }} />
             </div>
             
             <div className="calculator-row">
                 <button className="calculate-button" onClick={calculateInterestRate}>CALCULATE</button>
             </div>
 
-            {result && (
-                <div className="calculator-row result">
-                    It takes an Annual Interest Rate of {result} % for ${Number(premium).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
-                    to grow to ${Number(annuityValue).toLocaleString('en-US', { style: 'currency', currency: 'USD' })} over {termLength} years.
-                </div>
-            )}
+            {shouldCalculate && result && (
+    <div className="calculator-row result">
+        It takes an Annual Interest Rate of {result} % for {Number(premium).toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0 })}&nbsp;to grow to {Number(annuityValue).toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0 })} over {termLength} years.
+    </div>
+)}
+
         </div>
     );
 };
